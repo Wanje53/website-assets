@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPEN - Health and Planet Empowerment Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hpenGreen: '#2E8B57',
+                        hpenLightGreen: '#3CB371',
+                        hpenBlue: '#4682B4',
+                        hpenLightBlue: '#87CEEB',
+                        hpenTeal: '#20B2AA',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-10 w-auto" src="https://dx3.rcnoc.com:2083/cpsess1414816542/frontend/jupiter/filemanager/index.html?dir=%2fhome2%2fhpenorg%2fpublic_html" alt="HPEN Logo">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="text-hpenGreen hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#about" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                            <a href="#programs" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">Programs</a>
+                            <a href="#involved" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">Get Involved</a>
+                            <a href="#blog" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a href="#contact" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button class="bg-hpenGreen hover:bg-hpenLightGreen text-white px-4 py-2 rounded-md text-sm font-medium">
+                            Donate Now
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-white hover:bg-hpenGreen focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-hpenGreen block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#programs" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white block px-3 py-2 rounded-md text-base font-medium">Programs</a>
+                <a href="#involved" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white block px-3 py-2 rounded-md text-base font-medium">Get Involved</a>
+                <a href="#blog" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="#contact" class="text-gray-700 hover:bg-hpenLightGreen hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button class="bg-hpenGreen hover:bg-hpenLightGreen text-white w-full px-4 py-2 rounded-md text-base font-medium mt-2">
+                    Donate Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Empowering Health & Planet Through Action</h1>
+                    <p class="text-xl mb-8">Using art to advocate for urgent climate action while ensuring ethical sexual health practices that are freely chosen, individual-governed, and free from undue risk.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-hpenGreen hover:bg-hpenLightGreen text-white px-6 py-3 rounded-md font-medium">Join Our Movement</button>
+                        <button class="bg-white hover:bg-gray-100 text-hpenGreen px-6 py-3 rounded-md font-medium">Learn More</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="alt="Youth empowerment" class="rounded-lg shadow-xl max-w-md w-full floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="bg-hpenLightBlue py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-hpenGreen mb-12">Our Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-hpenBlue text-4xl font-bold mb-2">5,000+</div>
+                    <div class="text-gray-700">Youth Engaged</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-hpenBlue text-4xl font-bold mb-2">200+</div>
+                    <div class="text-gray-700">Communities Reached</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-hpenBlue text-4xl font-bold mb-2">50+</div>
+                    <div class="text-gray-700">Art Campaigns</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-hpenBlue text-4xl font-bold mb-2">15</div>
+                    <div class="text-gray-700">Countries Active</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center gap-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="alt="Our team" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-hpenGreen mb-6">About HPEN</h2>
+                    <p class="text-gray-700 mb-6">Founded on September 9, 2024, the Health and Planet Empowerment Network (HPEN) is a youth-led nonprofit organization working at the intersection of climate justice, sexual and reproductive health rights, and gender equality.</p>
+                    <p class="text-gray-700 mb-6">We believe in the power of art and youth engagement to drive social change and create sustainable solutions for our planet and communities.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-hpenBlue mb-3">Our Vision</h3>
+                        <p class="text-gray-700">To enhance collaboration at the intersection of climate change, health, and women's rights, especially addressing the impact of climate change on sexual and reproductive health for adolescents and youth.</p>
+                    </div>
+                    
+                    <div class="bg-hpenLightGreen bg-opacity-10 p-6 rounded-lg border-l-4 border-hpenGreen">
+                        <h3 class="text-xl font-semibold text-hpenGreen mb-3">Our Approach</h3>
+                        <p class="text-gray-700">We combine grassroot activism with artistic expression, policy advocacy, and community education to create lasting change in the areas we work.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-hpenGreen mb-4">Our Thematic Areas</h2>
+            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">We work across five interconnected thematic areas to create holistic change at the intersection of health and environmental justice.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="program-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Climate Justice & Action</h3>
+                    <p class="text-gray-700 mb-4">Empowering communities to advocate for environmental policies and implement sustainable solutions to combat climate change.</p>
+                    <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="program-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Sexual & Reproductive Health Rights</h3>
+                    <p class="text-gray-700 mb-4">Promoting access to comprehensive SRHR education and services that are freely chosen, individual-governed, and free from undue risk.</p>
+                    <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="program-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Art for Social Change</h3>
+                    <p class="text-gray-700 mb-4">Harnessing the power of creative expression to raise awareness, challenge norms, and inspire action on critical social issues.</p>
+                    <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 4 -->
+                <div class="program-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-venus-double text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Gender Justice & Empowerment</h3>
+                    <p class="text-gray-700 mb-4">Advancing gender equality and women's rights through education, advocacy, and leadership development programs.</p>
+                    <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 5 -->
+                <div class="program-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Youth Engagement</h3>
+                    <p class="text-gray-700 mb-4">Creating platforms for young people to lead, innovate, and drive change in their communities on issues that affect their future.</p>
+                    <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 6 - Combined Impact -->
+                <div class="program-card bg-hpenGreen text-white rounded-lg shadow-md p-8 transition-all duration-300">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe-africa text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integrated Impact</h3>
+                    <p class="text-white mb-4">Our unique approach connects these thematic areas to create comprehensive solutions that address the interconnected challenges facing our communities.</p>
+                    <a href="#" class="font-medium inline-flex items-center">See our impact <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-hpenTeal bg-opacity-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-hpenGreen mb-12">Voices of Change</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Testimonial" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-hpenBlue">Michael T.</h4>
+                            <p class="text-hpenGreen text-sm">Youth Advocate, Kenya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"HPEN's climate justice program empowered me to start a tree-planting initiative in my community. Their training gave me the tools to make real change."</p>
+                    <div class="mt-4 text-hpenGreen">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80" alt="Testimonial" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-hpenBlue">Aisha B.</h4>
+                            <p class="text-hpenGreen text-sm">Community Health Worker, Nigeria</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The SRHR workshops transformed how we approach sexual health education in our village. Now young people have accurate information they can trust."</p>
+                    <div class="mt-4 text-hpenGreen">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1586&q=80" alt="Testimonial" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-hpenBlue">Sarah K.</h4>
+                            <p class="text-hpenGreen text-sm">Artist & Activist, South Africa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Through HPEN's art program, I found my voice as an activist. My murals now spark conversations about climate change in unexpected places."</p>
+                    <div class="mt-4 text-hpenGreen">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section id="involved" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-hpenGreen mb-4">Get Involved</h2>
+            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">Join our movement for health and planetary justice. There are many ways to contribute to our mission.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Volunteer -->
+                <div class="bg-hpenLightBlue bg-opacity-10 rounded-lg p-8 border border-hpenLightBlue border-opacity-30">
+                    <div class="w-16 h-16 bg-hpenLightBlue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hands-helping text-hpenBlue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenBlue mb-3">Volunteer</h3>
+                    <p class="text-gray-700 mb-6">Share your skills and time with our programs. We have opportunities for everyone from students to professionals.</p>
+                    <button class="bg-hpenBlue hover:bg-hpenLightBlue text-white px-6 py-2 rounded-md font-medium">Volunteer Now</button>
+                </div>
+                
+                <!-- Donate -->
+                <div class="bg-hpenGreen bg-opacity-10 rounded-lg p-8 border border-hpenGreen border-opacity-30">
+                    <div class="w-16 h-16 bg-hpenGreen bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-donate text-hpenGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenGreen mb-3">Donate</h3>
+                    <p class="text-gray-700 mb-6">Your financial support helps us expand our programs and reach more communities in need.</p>
+                    <button class="bg-hpenGreen hover:bg-hpenLightGreen text-white px-6 py-2 rounded-md font-medium">Donate Today</button>
+                </div>
+                
+                <!-- Partner -->
+                <div class="bg-hpenTeal bg-opacity-10 rounded-lg p-8 border border-hpenTeal border-opacity-30">
+                    <div class="w-16 h-16 bg-hpenTeal bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-hpenTeal text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hpenTeal mb-3">Partner With Us</h3>
+                    <p class="text-gray-700 mb-6">Are you an organization working in similar areas? Let's collaborate for greater impact.</p>
+                    <button class="bg-hpenTeal hover:bg-hpenTeal hover:bg-opacity-80 text-white px-6 py-2 rounded-md font-medium">Partner Inquiry</button>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="mt-20 bg-gradient-to-r from-hpenLightBlue to-hpenTeal rounded-lg p-8 md:p-12">
+                <div class="md:flex items-center justify-between">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white mb-3">Stay Updated</h3>
+                        <p class="text-white opacity-90">Subscribe to our newsletter for the latest updates on our programs, events, and impact stories.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md focus:outline-none">
+                            <button type="submit" class="bg-white text-hpenGreen hover:bg-gray-100 px-6 py-3 rounded-md font-medium">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-hpenGreen mb-4">Latest Updates</h2>
+            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">News, stories, and insights from our work across Africa and beyond.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Blog post" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>Climate Justice</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-hpenBlue mb-3">Youth-Led Climate Protests Sweep Across 10 Countries</h3>
+                        <p class="text-gray-700 mb-4">How HPEN-supported youth activists are demanding action from policymakers through creative protests and art installations.</p>
+                        <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Blog post" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>May 28, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>SRHR</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-hpenBlue mb-3">Breaking Taboos: New Approach to SRHR Education</h3>
+                        <p class="text-gray-700 mb-4">Our innovative peer-to-peer education model is transforming how sexual health information is shared in conservative communities.</p>
+                        <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Blog post" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>April 10, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>Art for Change</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-hpenBlue mb-3">Murals That Move: Public Art as Protest</h3>
+                        <p class="text-gray-700 mb-4">Featured artists from our "Walls of Change" initiative discuss how street art is becoming a powerful tool for environmental activism.</p>
+                        <a href="#" class="text-hpenGreen font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-hpenGreen hover:bg-hpenLightGreen text-white px-6 py-3 rounded-md font-medium">View All Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="py-20 bg-hpenBlue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            
+            <div class="md:flex gap-12">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 pt-1">
+                                <i class="fas fa-map-marker-alt text-hpenLightBlue text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Headquarters</h4>
+                                <p class="opacity-90">Mbuani Dispensary, Ukunda Rd<br>Msambweni Sub-County, Kwale County</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 pt-1">
+                                <i class="fas fa-phone-alt text-hpenLightBlue text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Phone</h4>
+                                <p class="opacity-90">+254 720 944 043<br>+254 745 662 302</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 pt-1">
+                                <i class="fas fa-envelope text-hpenLightBlue text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Email</h4>
+                                <p class="opacity-90">healthandplanetempowermentnetw@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 pt-1">
+                                <i class="fas fa-clock text-hpenLightBlue text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Working Hours</h4>
+                                <p class="opacity-90">Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-hpenLightBlue">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-hpenLightBlue">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-hpenLightBlue">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-10 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-hpenLightBlue"></textarea>
+                        </div>
+                        <button type="submit" class="bg-hpenLightBlue hover:bg-hpenLightBlue hover:bg-opacity-80 text-white px-6 py-2 rounded-md font-medium">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.817476912622!2d36.82115931475396!3d-1.282235599063308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3b2be0a99%3A0x1d3a0e6e4a3a3a3a!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-xl"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-hpenGreen text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://via.placeholder.com/150x50?text=HPEN+Logo" alt="HPEN Logo" class="h-10 mb-4">
+                    <p class="opacity-90">Using art to advocate for urgent climate action while ensuring ethical sexual health practices that are freely chosen, individual-governed, and free from undue risk.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="opacity-90 hover:opacity-100">Home</a></li>
+                        <li><a href="#about" class="opacity-90 hover:opacity-100">About Us</a></li>
+                        <li><a href="#programs" class="opacity-90 hover:opacity-100">Programs</a></li>
+                        <li><a href="#involved" class="opacity-90 hover:opacity-100">Get Involved</a></li>
+                        <li><a href="#blog" class="opacity-90 hover:opacity-100">Blog</a></li>
+                        <li><a href="#contact" class="opacity-90 hover:opacity-100">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Climate Justice</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">SRHR</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Art for Change</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Gender Justice</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Youth Engagement</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Privacy Policy</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Terms of Service</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Donor Policy</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100">Annual Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="opacity-90 mb-4 md:mb-0">© 2023 Health and Planet Empowerment Network. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="opacity-90 hover:opacity-100"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="opacity-90 hover:opacity-100"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="opacity-90 hover:opacity-100"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="opacity-90 hover:opacity-100"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
